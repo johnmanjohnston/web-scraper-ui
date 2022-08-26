@@ -1,0 +1,16 @@
+#main-search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#main-search div span {
+    font-weight: 300;
+}
+
+#main-search div {
+    font-size: 2em;
+    margin: 0.3dem;
+}
