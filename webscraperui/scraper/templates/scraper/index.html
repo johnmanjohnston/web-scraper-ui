@@ -1,0 +1,36 @@
+{% load static %}
+
+<!--
+    Licensed under the MIT License (https://opensource.org/licenses/MIT)
+    web-scraper-ui written by Ethan John (https://github.com/johnmanjohnston)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-scraper</title>
+
+    <link rel="stylesheet" href="{% static 'scraper/global.css' %}">
+    <link rel="stylesheet" href="{% static 'scraper/index.css' %}">
+</head>
+<body>
+    <div id="main-search"> 
+        <div><span>web</span>-scraper</div>
+        <form action="/search" method="get">
+            <input name="q" type="text" placeholder="Search something up">
+            <input type="submit" value="Go!">
+        </form>
+    </div>
+
+    <div id="creator-notice" style="background-color: rgba(0, 0, 0, 0.2); position: absolute; bottom: 0; width: 100%; height: 3em;">
+        <div style="position: relative; width: 100%; height: 100%;">
+
+            <div style="font-size: 0.8em;" class="absolute-center fstyle-small-notice">Orginally programmed by <a class="fstyle-small-notice" href="https://github.com/johnmanjohnston">Ethan John (johnmanjohnston)</a>. The orginal project is open source, and can be found <a class="fstyle-small-notice" href="https://github.com/johnmanjohnston/web-scraper-ui">here</a>.</div>
+
+        </div>
+    </div>
+</body>
+</html>

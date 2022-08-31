@@ -1,0 +1,60 @@
+form input {
+    border: none;
+    font-size: 1.5em;
+    padding: 0.4em 0.6em;
+    border-radius: 0.3em;
+
+    background-color: rgb(70, 70, 70);
+}
+
+form input[type="text"] {
+    width: 25vw;
+}
+
+form input[type="submit"] {
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+form input[type="submit"]:hover {
+    border-radius: 0.2em;
+    transition: 0.1s;
+    background-color: rgb(110, 110, 110);
+}
+
+.res-title {
+    color: rgb(150, 150, 150);
+}
+
+.res-link  {
+    color: rgb(190, 190, 190);
+}
+
+.res-desc {
+    color: rgb(140, 140, 140);
+    font-size: 0.8em;
+    margin: 0.2em 0;
+}
+
+a:visited {
+    color: rgb(200, 150, 200);
+}
+
+.subpage {
+    color: rgb(150, 150, 150);
+    margin: 0 3em;
+}
+
+#home-logo {
+    font-size: 2.3em; 
+    position: absolute; 
+    top: 50%; 
+    transform:translateY(-50%);
+    text-decoration: none;
+    color: rgb(170, 170, 170);
+    z-index: 5;
+}
+
+#home-logo:hover {
+    color: whitesmoke;
+}
