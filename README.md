@@ -11,3 +11,6 @@ As a framework for the backend code, [Django](https://www.djangoproject.com/) is
 + Install Django (`pip3 install django`)
 + In the `scraper` app directory, create a `.env` file and create a variable `ZENSERP_KEY` and set its value to your Zenserp key
 + Run the server (`python3 manage.py runserver`)
+
+If everything works successfully, you should see something like the following
+![image](https://user-images.githubusercontent.com/97091148/187571096-2beeb106-081b-40be-a38a-e774d9485d1e.png)
