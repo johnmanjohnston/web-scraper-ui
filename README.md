@@ -13,4 +13,6 @@ As a framework for the backend code, [Django](https://www.djangoproject.com/) is
 + Run the server (`python3 manage.py runserver`)
 
 If everything works successfully, you should see something resembling the following at the home route of the application
+
+
 ![image](https://user-images.githubusercontent.com/97091148/187571096-2beeb106-081b-40be-a38a-e774d9485d1e.png)
