@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 import requests
 import json
 import dotenv
@@ -9,7 +9,6 @@ dotenv.load_dotenv()
 
 # Create your views here.
 def index(request):
-    # return HttpResponse("<h1>stuff's working</h1>")
     return render(request, "scraper/index.html")
 
 
@@ -17,7 +16,13 @@ def search_page(request):
     if not request.GET.get("q"):
         return HttpResponseRedirect("/")
 
+    if not request.GET.get("pg"):
+        pagecount = 0
+    else:
+        pagecount = int(request.GET.get("pg"))
+    
     q = request.GET.get("q")
+    print(pagecount)
 
     searchhtml = "";
     if q == "dev:norequest":
@@ -34,11 +39,26 @@ def search_page(request):
 
     params = (
         ("q", q),
-        ("num", "99")
+        ("num", "100"),
+        ("start", str(int(pagecount) * 100)) 
     )
 
     response = requests.get("https://app.zenserp.com/api/v2/search", headers=headers, params=params)
     data = json.loads(response.text)
+
+    emptyresulthtml = f"<h1 style='font-weight: 300'>Couldn't find anything about \"{q}\"</h1>"
+
+    if "organic" in data:
+        validsearch = True
+    else:
+        validsearch = False
+
+    if validsearch == False:
+        searchhtml = emptyresulthtml
+
+        return render(request, "scraper/search.html", {
+        "searchcontent": searchhtml
+    })
 
     for result in data["organic"]:
         try:
@@ -69,6 +89,11 @@ def search_page(request):
             <div class="res-desc">{desc}</div>
             <br> <br>
         """
+
+    if searchhtml.strip() == "":
+        return render(request, "scraper/search.html", {
+            "searchcontent": f"<h1>Couldn't find more information on \"{q}\"</h1>"
+        })
 
     return render(request, "scraper/search.html", {
         "searchcontent": searchhtml
