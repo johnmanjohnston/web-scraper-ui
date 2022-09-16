@@ -1,7 +1,7 @@
 # web-scraper-ui
 
 ## About
-A tool that gets results from the web, matching a query using [Zenserp](https://zenserp.com/).
+A tool that gets results from the web, based off of a query using [Zenserp](https://zenserp.com/).
 The results are retrieved, then on a HTML page they are formatted and displayed.
 As a framework for the backend code, [Django](https://www.djangoproject.com/) is used.
 
