@@ -22,3 +22,5 @@ Now you can explore the internet. Want to know what the internet can do? Listen 
 If it's the home route, then the home page is rendered. The home page has a form which sends a `GET` request to the search page.
 
 When a request to the search route is detected, `search_page()` in `views.py` is called, and a request is sent to Zenserp to get the search results using the query passed along with the request from the home page. If no query is detected, the user is redirected to the home route.
+
+A request is sent to Zenserp to get the page results, and in the `views.py` file, it prepares the styling and order of the results for the HTML file
